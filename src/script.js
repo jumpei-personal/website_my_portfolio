@@ -5,8 +5,6 @@ const year = document.getElementById("year");
 const cleanPathMap = {
   "/index.html": "/",
   "/index-jp.html": "/jp",
-  "/projects.html": "/projects",
-  "/projects-jp.html": "/projects-jp",
   "/resume.html": "/resume",
   "/resume-jp.html": "/resume-jp",
 };
@@ -19,6 +17,21 @@ if (cleanPath) {
 if (year) {
   year.textContent = String(new Date().getFullYear());
 }
+
+// Nested project tabs: selecting a tab shows its panel and hides its siblings' panels.
+document.querySelectorAll(".tab-list").forEach((tabList) => {
+  const tabs = tabList.querySelectorAll('[role="tab"]');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((otherTab) => {
+        const isSelected = otherTab === tab;
+        otherTab.setAttribute("aria-selected", String(isSelected));
+        document.getElementById(otherTab.getAttribute("aria-controls")).hidden = !isSelected;
+      });
+    });
+  });
+});
 
 if (navToggle && nav) {
   navToggle.addEventListener("click", () => {

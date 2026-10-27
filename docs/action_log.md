@@ -503,3 +503,10 @@
 - Action taken: Updated `src/index-jp.html` to use `加藤順平`, removed old hero/section content that no longer exists in `src/index.html`, and retranslated the current homepage copy.
 - Files changed: `src/index-jp.html`, `docs/action_log.md`
 - Status: Completed; targeted search confirms old Japanese hero content and `純平` are gone.
+
+### Merge Analytics Projects Into Homepage Tabs
+
+- Issue/task: Combine the homepage and analytics projects page into one page, replacing the homepage project carousel with nested tabs per category and project.
+- Action taken: Rewrote `docs/analytics_projects.md` by category with an Algorithms field for 15 projects, replaced the homepage carousel (EN/JP) with category tabs and nested project tabs, removed the separate projects pages, pointed the header `Analytics Project` link to `/#projects` (`/jp#projects`), removed projects pages from the Pages workflow and Docker preview, and bumped asset cache versions. Unknown content is shown as `TBD`.
+- Files changed: `docs/analytics_projects.md`, `src/index.html`, `src/index-jp.html`, `src/style.css`, `src/script.js`, `src/header.js`, `src/resume.html`, `src/resume-jp.html`, `.github/workflows/deploy-pages.yml`, `docker-compose.yml`, `docs/action_log.md`; deleted `src/projects.html`, `src/projects-jp.html`
+- Status: Completed locally; tab targets and HTML nesting checked, JS syntax checked, EN desktop and JP mobile screenshots rendered.

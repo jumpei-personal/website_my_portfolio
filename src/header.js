@@ -5,12 +5,10 @@ const lang = document.body.dataset.lang;
 const routes = {
   en: {
     home: "/",
-    projects: "/projects",
     resume: "/resume",
   },
   jp: {
     home: "/jp",
-    projects: "/projects-jp",
     resume: "/resume-jp",
   },
 };
@@ -51,7 +49,6 @@ const socialLinks = `
 if (headerRoot && routes[lang] && routes.en[page] && routes.jp[page]) {
   const pageLinks = routes[lang];
   const homeCurrent = page === "home" ? ' aria-current="page"' : "";
-  const projectsCurrent = page === "projects" ? ' aria-current="page"' : "";
   const resumeCurrent = page === "resume" ? ' aria-current="page"' : "";
   const enCurrent = lang === "en" ? ' aria-current="page"' : "";
   const jpCurrent = lang === "jp" ? ' aria-current="page"' : "";
@@ -61,7 +58,7 @@ if (headerRoot && routes[lang] && routes.en[page] && routes.jp[page]) {
       <div class="site-header-inner">
         <nav class="nav nav-left">
           <a href="${pageLinks.home}"${homeCurrent}>Home</a>
-          <a href="${pageLinks.projects}"${projectsCurrent}>Analytics Project</a>
+          <a href="${pageLinks.home}#projects">Analytics Project</a>
         </nav>
 
         <a class="brand" href="${pageLinks.home}">Jumpei Kato/加藤順平</a>
@@ -81,7 +78,7 @@ if (headerRoot && routes[lang] && routes.en[page] && routes.jp[page]) {
 
       <nav class="nav nav-mobile" id="site-nav">
         <a href="${pageLinks.home}"${homeCurrent}>Home</a>
-        <a href="${pageLinks.projects}"${projectsCurrent}>Analytics Project</a>
+        <a href="${pageLinks.home}#projects">Analytics Project</a>
         <div class="lang-toggle" aria-label="Language switcher">
           <a href="${routes.en[page]}"${enCurrent}>EN</a>
           <span>/</span>
