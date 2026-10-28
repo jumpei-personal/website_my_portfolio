@@ -524,3 +524,10 @@
 - Action taken: Added a `Tech Stack` section after Analytics Projects (EN/JP) with 11 groups of tool tags, sourced from repo dependencies/imports, the resume, and user-provided tools. Added tech stack styles and bumped asset cache versions.
 - Files changed: `src/index.html`, `src/index-jp.html`, `src/style.css`, `src/resume.html`, `src/resume-jp.html`, `docs/action_log.md`
 - Status: Completed; HTML nesting checked, EN desktop and JP mobile screenshots rendered.
+
+### Move Tech Stack Above Projects And Add Clustering Group
+
+- Issue/task: Place the tech stack above Analytics Projects and give clustering its own group.
+- Action taken: Moved the Tech Stack section above Analytics Projects (EN/JP), moved UMAP and HDBSCAN out of NLP & Embeddings into a new Clustering & Dimensionality Reduction group with K-Means, Agglomerative Clustering, PCA, and Truncated SVD, and bumped asset cache versions. Factor analysis was not added because no usage was found in the repos.
+- Files changed: `src/index.html`, `src/index-jp.html`, `src/resume.html`, `src/resume-jp.html`, `docs/action_log.md`
+- Status: Completed; HTML nesting checked and EN desktop screenshot rendered.
