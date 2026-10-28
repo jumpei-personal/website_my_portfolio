@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20261027">
+  <link rel="stylesheet" href="/style.css?v=20261027b">
 </head>
 <body class="page-home" data-page="home" data-lang="jp">
   <div class="grain" aria-hidden="true"></div>
@@ -38,278 +38,214 @@
         <h2>分析プロジェクト</h2>
       </div>
 
-      <div class="tab-list category-tabs" role="tablist" aria-label="プロジェクトのカテゴリ">
-        <button type="button" role="tab" aria-selected="true" aria-controls="category-workforce-planning">人員計画</button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="category-retention-drivers">定着・要因分析</button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="category-performance">評価・パフォーマンス</button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="category-talent-mobility">タレントモビリティ</button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="category-recruiting">採用</button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="category-pay-equity">賃金公平性</button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="category-ai-automation">AI・自動化</button>
-      </div>
+      <div class="project-tree">
+        <details class="category-group" id="category-workforce-planning">
+          <summary>人員計画</summary>
+          <details class="project-item" id="headcount-simulation-framework">
+            <summary>人員シミュレーション基盤</summary>
+            <div class="project-item-body">
+              <p class="project-summary">入社・退職・社内異動のシナリオを踏まえ、将来の人員数を予測するための基盤。過去の従業員属性から推定した遷移確率を用いるマルコフ連鎖ベースの人員シミュレーションモデルで、10,000名以上の従業員について5つ以上の属性を扱い、戦略的な人員計画と人員規模の予測を支援します。</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>従来の予測プロセスは時間がかかるうえ、統計的に頑健でない確率の仮定に依存しており、人員計画における不確実性を考慮することが困難でした。</dd></div>
+                <div><dt>Model</dt><dd>マルコフ連鎖に基づく人員遷移モデル。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Markov Chain</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>拡張性の高い人員予測により、人員計画の精度向上を支援。</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="labor-cost-simulation-framework">
+            <summary>人件費シミュレーション基盤</summary>
+            <div class="project-item-body">
+              <p class="project-summary">不確実な人員変動シナリオのもとで、将来の人件費を予測するための基盤。シミュレーションした人員数を入力とするExplainable Boosting Machine（EBM）モデルを用い、複数シナリオにわたる人件費予測と予算計画を支援します。</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>採用・退職・社内異動といった将来の人員変動が不確実な状況では、人件費の計画が困難になります。</dd></div>
+                <div><dt>Model</dt><dd>シミュレーションした人員数を用いた、EBMベースの人件費シミュレーションモデル。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Explainable Boosting Machine (EBM)</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>シナリオベースの人件費予測により、予算計画の精度向上を支援。</dd></div>
+              </dl>
+            </div>
+          </details>
+        </details>
 
-      <!-- 人員計画 -->
-      <div class="category-panel" id="category-workforce-planning" role="tabpanel">
-        <div class="tab-list project-tabs" role="tablist" aria-label="人員計画のプロジェクト">
-          <button type="button" role="tab" aria-selected="true" aria-controls="headcount-simulation-framework">人員シミュレーション</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="labor-cost-simulation-framework">人件費シミュレーション</button>
-        </div>
+        <details class="category-group" id="category-retention-drivers">
+          <summary>定着・要因分析</summary>
+          <details class="project-item" id="driver-analysis-framework">
+            <summary>ドライバー分析基盤</summary>
+            <div class="project-item-body">
+              <p class="project-summary">クライアントや分析テーマごとに異なるHR上の問いに対し、解釈しやすいドライバーを特定する基盤。多数のカテゴリ変数に対応し、目的変数の設定や、分析依頼ごとの個別データクレンジングが可能です。</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>HRデータには多くのカテゴリ変数が含まれるため、ビジネス背景の異なる頻繁なアドホック依頼に対して、通常の線形回帰やロジスティック回帰をそのまま適用することは困難でした。</dd></div>
+                <div><dt>Model</dt><dd>個別のデータクレンジングに対応できる、設定可能なドライバー分析モデル。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Explainable Boosting Machine (EBM)</li><li>Logistic Regression</li><li>Bayesian Inference</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>多様なHR課題に対して、解釈しやすい要因分析を提供。</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="attrition-analysis">
+            <summary>離職分析</summary>
+            <div class="project-item-body">
+              <p class="project-summary">離職の可能性が高い従業員と、離職リスクが時間とともにどう変化するかを推定する分析。勾配ブースティングによる離職リスクの分類と、時間依存Coxモデルによる離職までの期間分析を組み合わせ、再現性のあるノートブックパイプラインからビジネス向けのHTMLレポートを生成します。</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>人事部門には、誰が離職しそうかだけでなく、いつ離職リスクが高まるのかを、ビジネス側が行動に移せる形で把握する必要がありました。</dd></div>
+                <div><dt>Model</dt><dd>離職リスクと離職までの期間を推定するモデルと、ビジネス向けレポート。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>LightGBM</li><li>Cox Time-Varying Model</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="change-to-metric-causal-inference">
+            <summary>組織変化の因果効果分析</summary>
+            <div class="project-item-body">
+              <p class="project-summary">異動などの組織上の変化が、離職率などのHR指標に与える因果効果を推定する分析。各従業員がその変化を経験する確率を傾向スコアとしてモデル化し、変化あり・なしの従業員間で重み付けした結果を比較することで、選択バイアスを低減します。</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>単純な前後比較では、異動などの組織上の変化が、離職率などのHR指標の変化を実際に引き起こしているのかを判断できません。</dd></div>
+                <div><dt>Model</dt><dd>傾向スコアで重み付けした因果効果推定モデル。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Propensity Score (Logistic Regression)</li><li>Inverse Probability Weighting (IPW)</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+        </details>
 
-        <article class="detail-card project-panel project-panel-with-media" id="headcount-simulation-framework" role="tabpanel">
-          <div class="project-panel-media">
-            <img src="/assets/images/headcount_simulation.png" alt="人員シミュレーションのプレビュー">
-          </div>
-          <div class="project-panel-body">
-            <h3>人員シミュレーション基盤</h3>
-            <p class="project-summary">入社・退職・社内異動のシナリオを踏まえ、将来の人員数を予測するための基盤。過去の従業員属性から推定した遷移確率を用いるマルコフ連鎖ベースの人員シミュレーションモデルで、10,000名以上の従業員について5つ以上の属性を扱い、戦略的な人員計画と人員規模の予測を支援します。</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>従来の予測プロセスは時間がかかるうえ、統計的に頑健でない確率の仮定に依存しており、人員計画における不確実性を考慮することが困難でした。</dd></div>
-              <div><dt>Model</dt><dd>マルコフ連鎖に基づく人員遷移モデル。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Markov Chain</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>拡張性の高い人員予測により、人員計画の精度向上を支援。</dd></div>
-            </dl>
-          </div>
-        </article>
+        <details class="category-group" id="category-performance">
+          <summary>評価・パフォーマンス</summary>
+          <details class="project-item" id="evaluation-analysis">
+            <summary>評価分析</summary>
+            <div class="project-item-body">
+              <p class="project-summary">従業員の評価結果に関連する要因を明らかにする分析。説明変数と目的変数のデータを整備し、探索的分析を行ったうえでElastic Net回帰モデルを学習し、評価結果の解釈しやすいドライバーを抽出します。</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>TBD</dd></div>
+                <div><dt>Model</dt><dd>従業員の評価結果を説明する、解釈性の高い回帰モデル。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Elastic Net Regression</li><li>Explainable Boosting Machine (EBM)</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+        </details>
 
-        <article class="detail-card project-panel project-panel-with-media" id="labor-cost-simulation-framework" role="tabpanel" hidden>
-          <div class="project-panel-media">
-            <img src="/assets/images/laborcost_simulation.png" alt="人件費シミュレーションのプレビュー">
-          </div>
-          <div class="project-panel-body">
-            <h3>人件費シミュレーション基盤</h3>
-            <p class="project-summary">不確実な人員変動シナリオのもとで、将来の人件費を予測するための基盤。シミュレーションした人員数を入力とするExplainable Boosting Machine（EBM）モデルを用い、複数シナリオにわたる人件費予測と予算計画を支援します。</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>採用・退職・社内異動といった将来の人員変動が不確実な状況では、人件費の計画が困難になります。</dd></div>
-              <div><dt>Model</dt><dd>シミュレーションした人員数を用いた、EBMベースの人件費シミュレーションモデル。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Explainable Boosting Machine (EBM)</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>シナリオベースの人件費予測により、予算計画の精度向上を支援。</dd></div>
-            </dl>
-          </div>
-        </article>
-      </div>
+        <details class="category-group" id="category-talent-mobility">
+          <summary>タレントモビリティ</summary>
+          <details class="project-item" id="relocation-optimization-ai">
+            <summary>異動最適化AI（WIP）</summary>
+            <div class="project-item-body">
+              <p class="project-summary">職種名の埋め込みを用いて、より適した異動先を推薦する開発中のプロジェクト。各従業員と他の職務との距離を測定し、従業員が理想とする将来のポジションへの道筋を推定します。従来の求人推薦とは異なり、次のマッチングだけでなく、理想の職務への距離を最小化する最適な道筋を最適化します。</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>異動の意思決定では、現在似ている職務とのマッチングだけでなく、各従業員が理想とする将来のポジションまでの距離も考慮する必要があります。</dd></div>
+                <div><dt>Model</dt><dd>職務間の距離と理想のキャリアパスを最適化する、職種名の埋め込みモデル。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Sentence Embeddings (SBERT / BGE)</li><li>UMAP</li><li>HDBSCAN</li><li>K-Means</li><li>Agglomerative Clustering</li><li>Cosine Similarity</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>理想の職務への道筋を最短化する異動を推薦。</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="skill-knowledge-graph">
+            <summary>スキルナレッジグラフ</summary>
+            <div class="project-item-body">
+              <p class="project-summary">各職務に求められるスキルをもとに、社内での次のキャリア候補を推薦する仕組み。LLMで職種ごとのスキルを生成し、埋め込みの類似度とLLMによる判定を組み合わせてスキル間の関係をスコア化し、それを集約して職務間の類似度を算出することで、キャリア面談を支援します。</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>従業員はスキルや経験を持っていても社内での明確なキャリアパスが見えにくく、キャリア面談を行うカウンセラーには具体的な次の職務の提案が必要でした。</dd></div>
+                <div><dt>Model</dt><dd>社内異動の推薦に向けた、スキルベースの職務類似度モデル。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>LLM Skill Generation</li><li>Embeddings + Cosine Similarity</li><li>LLM-as-Judge Scoring</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+        </details>
 
-      <!-- 定着・要因分析 -->
-      <div class="category-panel" id="category-retention-drivers" role="tabpanel" hidden>
-        <div class="tab-list project-tabs" role="tablist" aria-label="定着・要因分析のプロジェクト">
-          <button type="button" role="tab" aria-selected="true" aria-controls="driver-analysis-framework">ドライバー分析</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="attrition-analysis">離職分析</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="change-to-metric-causal-inference">因果推論</button>
-        </div>
+        <details class="category-group" id="category-recruiting">
+          <summary>採用</summary>
+          <details class="project-item" id="time-to-recruit-regression">
+            <summary>採用リードタイム回帰分析</summary>
+            <div class="project-item-body">
+              <p class="project-summary">TBD</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>TBD</dd></div>
+                <div><dt>Model</dt><dd>採用リードタイムの要因を分析する回帰モデル。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Linear Regression</li><li>Explainable Boosting Machine (EBM)</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="skills-inference-from-job-descriptions">
+            <summary>職務記述書からのスキル推定</summary>
+            <div class="project-item-body">
+              <p class="project-summary">職務記述書のテキストから職務を分類し、主要なスキルをマッピングするプロジェクト。TF-IDF、Word2Vec、Doc2Vecによるテキスト表現を比較し、K-MeansクラスタリングとLDAトピックモデルで類似する職務をグループ化して、各グループを特徴づける語彙を抽出しました。ノースウェスタン大学 MSDS 453 自然言語処理の最終課題（2021年冬学期）。</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>職務記述書のスキル情報は非構造化テキストに含まれているため、職務の分類や必要なスキルの整理が困難です。</dd></div>
+                <div><dt>Model</dt><dd>職務分類とスキルマッピングのための、テキストクラスタリングとトピックモデル。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>TF-IDF</li><li>Word2Vec (Google News pretrained)</li><li>Doc2Vec</li><li>K-Means</li><li>LDA Topic Modeling</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="candidate-job-matching">
+            <summary>候補者と求人のマッチング</summary>
+            <div class="project-item-body">
+              <p class="project-summary">TBD</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>TBD</dd></div>
+                <div><dt>Model</dt><dd>埋め込みとランキング学習（Learning to Rank）による、候補者と求人のマッチングモデル。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Vector Embeddings</li><li>LambdaMART</li><li>CatBoost Ranking</li><li>XGBoost Ranking</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+        </details>
 
-        <article class="detail-card project-panel project-panel-with-media" id="driver-analysis-framework" role="tabpanel">
-          <div class="project-panel-media">
-            <img src="/assets/images/driver_analysis.png" alt="ドライバー分析基盤のプレビュー">
-          </div>
-          <div class="project-panel-body">
-            <h3>ドライバー分析基盤</h3>
-            <p class="project-summary">クライアントや分析テーマごとに異なるHR上の問いに対し、解釈しやすいドライバーを特定する基盤。多数のカテゴリ変数に対応し、目的変数の設定や、分析依頼ごとの個別データクレンジングが可能です。</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>HRデータには多くのカテゴリ変数が含まれるため、ビジネス背景の異なる頻繁なアドホック依頼に対して、通常の線形回帰やロジスティック回帰をそのまま適用することは困難でした。</dd></div>
-              <div><dt>Model</dt><dd>個別のデータクレンジングに対応できる、設定可能なドライバー分析モデル。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Explainable Boosting Machine (EBM)</li><li>Logistic Regression</li><li>Bayesian Inference</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>多様なHR課題に対して、解釈しやすい要因分析を提供。</dd></div>
-            </dl>
-          </div>
-        </article>
+        <details class="category-group" id="category-pay-equity">
+          <summary>賃金公平性</summary>
+          <details class="project-item" id="gender-pay-gap-analysis">
+            <summary>男女間賃金格差分析</summary>
+            <div class="project-item-body">
+              <p class="project-summary">TBD</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>TBD</dd></div>
+                <div><dt>Model</dt><dd>調整済みの男女間賃金格差を推定する回帰モデル。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Linear Regression</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+        </details>
 
-        <article class="detail-card project-panel" id="attrition-analysis" role="tabpanel" hidden>
-          <div class="project-panel-body">
-            <h3>離職分析</h3>
-            <p class="project-summary">離職の可能性が高い従業員と、離職リスクが時間とともにどう変化するかを推定する分析。勾配ブースティングによる離職リスクの分類と、時間依存Coxモデルによる離職までの期間分析を組み合わせ、再現性のあるノートブックパイプラインからビジネス向けのHTMLレポートを生成します。</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>人事部門には、誰が離職しそうかだけでなく、いつ離職リスクが高まるのかを、ビジネス側が行動に移せる形で把握する必要がありました。</dd></div>
-              <div><dt>Model</dt><dd>離職リスクと離職までの期間を推定するモデルと、ビジネス向けレポート。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>LightGBM</li><li>Cox Time-Varying Model</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="detail-card project-panel" id="change-to-metric-causal-inference" role="tabpanel" hidden>
-          <div class="project-panel-body">
-            <h3>組織変化の因果効果分析</h3>
-            <p class="project-summary">異動などの組織上の変化が、離職率などのHR指標に与える因果効果を推定する分析。各従業員がその変化を経験する確率を傾向スコアとしてモデル化し、変化あり・なしの従業員間で重み付けした結果を比較することで、選択バイアスを低減します。</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>単純な前後比較では、異動などの組織上の変化が、離職率などのHR指標の変化を実際に引き起こしているのかを判断できません。</dd></div>
-              <div><dt>Model</dt><dd>傾向スコアで重み付けした因果効果推定モデル。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Propensity Score (Logistic Regression)</li><li>Inverse Probability Weighting (IPW)</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-      </div>
-
-      <!-- 評価・パフォーマンス -->
-      <div class="category-panel" id="category-performance" role="tabpanel" hidden>
-        <div class="tab-list project-tabs" role="tablist" aria-label="評価・パフォーマンスのプロジェクト">
-          <button type="button" role="tab" aria-selected="true" aria-controls="evaluation-analysis">評価分析</button>
-        </div>
-
-        <article class="detail-card project-panel" id="evaluation-analysis" role="tabpanel">
-          <div class="project-panel-body">
-            <h3>評価分析</h3>
-            <p class="project-summary">従業員の評価結果に関連する要因を明らかにする分析。説明変数と目的変数のデータを整備し、探索的分析を行ったうえでElastic Net回帰モデルを学習し、評価結果の解釈しやすいドライバーを抽出します。</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>TBD</dd></div>
-              <div><dt>Model</dt><dd>従業員の評価結果を説明する、解釈性の高い回帰モデル。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Elastic Net Regression</li><li>Explainable Boosting Machine (EBM)</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-      </div>
-
-      <!-- タレントモビリティ -->
-      <div class="category-panel" id="category-talent-mobility" role="tabpanel" hidden>
-        <div class="tab-list project-tabs" role="tablist" aria-label="タレントモビリティのプロジェクト">
-          <button type="button" role="tab" aria-selected="true" aria-controls="relocation-optimization-ai">異動最適化AI（WIP）</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="skill-knowledge-graph">スキルナレッジグラフ</button>
-        </div>
-
-        <article class="detail-card project-panel" id="relocation-optimization-ai" role="tabpanel">
-          <div class="project-panel-body">
-            <h3>異動最適化AI（WIP）</h3>
-            <p class="project-summary">職種名の埋め込みを用いて、より適した異動先を推薦する開発中のプロジェクト。各従業員と他の職務との距離を測定し、従業員が理想とする将来のポジションへの道筋を推定します。従来の求人推薦とは異なり、次のマッチングだけでなく、理想の職務への距離を最小化する最適な道筋を最適化します。</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>異動の意思決定では、現在似ている職務とのマッチングだけでなく、各従業員が理想とする将来のポジションまでの距離も考慮する必要があります。</dd></div>
-              <div><dt>Model</dt><dd>職務間の距離と理想のキャリアパスを最適化する、職種名の埋め込みモデル。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Sentence Embeddings (SBERT / BGE)</li><li>UMAP</li><li>HDBSCAN</li><li>K-Means</li><li>Agglomerative Clustering</li><li>Cosine Similarity</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>理想の職務への道筋を最短化する異動を推薦。</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="detail-card project-panel" id="skill-knowledge-graph" role="tabpanel" hidden>
-          <div class="project-panel-body">
-            <h3>スキルナレッジグラフ</h3>
-            <p class="project-summary">各職務に求められるスキルをもとに、社内での次のキャリア候補を推薦する仕組み。LLMで職種ごとのスキルを生成し、埋め込みの類似度とLLMによる判定を組み合わせてスキル間の関係をスコア化し、それを集約して職務間の類似度を算出することで、キャリア面談を支援します。</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>従業員はスキルや経験を持っていても社内での明確なキャリアパスが見えにくく、キャリア面談を行うカウンセラーには具体的な次の職務の提案が必要でした。</dd></div>
-              <div><dt>Model</dt><dd>社内異動の推薦に向けた、スキルベースの職務類似度モデル。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>LLM Skill Generation</li><li>Embeddings + Cosine Similarity</li><li>LLM-as-Judge Scoring</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-      </div>
-
-      <!-- 採用 -->
-      <div class="category-panel" id="category-recruiting" role="tabpanel" hidden>
-        <div class="tab-list project-tabs" role="tablist" aria-label="採用のプロジェクト">
-          <button type="button" role="tab" aria-selected="true" aria-controls="time-to-recruit-regression">採用リードタイム分析</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="skills-inference-from-job-descriptions">スキル推定</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="candidate-job-matching">候補者・求人マッチング</button>
-        </div>
-
-        <article class="detail-card project-panel" id="time-to-recruit-regression" role="tabpanel">
-          <div class="project-panel-body">
-            <h3>採用リードタイム回帰分析</h3>
-            <p class="project-summary">TBD</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>TBD</dd></div>
-              <div><dt>Model</dt><dd>採用リードタイムの要因を分析する回帰モデル。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Linear Regression</li><li>Explainable Boosting Machine (EBM)</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="detail-card project-panel" id="skills-inference-from-job-descriptions" role="tabpanel" hidden>
-          <div class="project-panel-body">
-            <h3>職務記述書からのスキル推定</h3>
-            <p class="project-summary">職務記述書のテキストから職務を分類し、主要なスキルをマッピングするプロジェクト。TF-IDF、Word2Vec、Doc2Vecによるテキスト表現を比較し、K-MeansクラスタリングとLDAトピックモデルで類似する職務をグループ化して、各グループを特徴づける語彙を抽出しました。ノースウェスタン大学 MSDS 453 自然言語処理の最終課題（2021年冬学期）。</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>職務記述書のスキル情報は非構造化テキストに含まれているため、職務の分類や必要なスキルの整理が困難です。</dd></div>
-              <div><dt>Model</dt><dd>職務分類とスキルマッピングのための、テキストクラスタリングとトピックモデル。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>TF-IDF</li><li>Word2Vec (Google News pretrained)</li><li>Doc2Vec</li><li>K-Means</li><li>LDA Topic Modeling</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="detail-card project-panel" id="candidate-job-matching" role="tabpanel" hidden>
-          <div class="project-panel-body">
-            <h3>候補者と求人のマッチング</h3>
-            <p class="project-summary">TBD</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>TBD</dd></div>
-              <div><dt>Model</dt><dd>埋め込みとランキング学習（Learning to Rank）による、候補者と求人のマッチングモデル。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Vector Embeddings</li><li>LambdaMART</li><li>CatBoost Ranking</li><li>XGBoost Ranking</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-      </div>
-
-      <!-- 賃金公平性 -->
-      <div class="category-panel" id="category-pay-equity" role="tabpanel" hidden>
-        <div class="tab-list project-tabs" role="tablist" aria-label="賃金公平性のプロジェクト">
-          <button type="button" role="tab" aria-selected="true" aria-controls="gender-pay-gap-analysis">男女間賃金格差</button>
-        </div>
-
-        <article class="detail-card project-panel" id="gender-pay-gap-analysis" role="tabpanel">
-          <div class="project-panel-body">
-            <h3>男女間賃金格差分析</h3>
-            <p class="project-summary">TBD</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>TBD</dd></div>
-              <div><dt>Model</dt><dd>調整済みの男女間賃金格差を推定する回帰モデル。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Linear Regression</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-      </div>
-
-      <!-- AI・自動化 -->
-      <div class="category-panel" id="category-ai-automation" role="tabpanel" hidden>
-        <div class="tab-list project-tabs" role="tablist" aria-label="AI・自動化のプロジェクト">
-          <button type="button" role="tab" aria-selected="true" aria-controls="security-review-ai-agent">セキュリティレビューAI</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="transcribe-bot">文字起こしBot</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="household-budget-management">家計管理</button>
-        </div>
-
-        <article class="detail-card project-panel project-panel-with-media" id="security-review-ai-agent" role="tabpanel">
-          <div class="project-panel-media">
-            <img src="/assets/images/security_app.png" alt="セキュリティレビューAIエージェントのプレビュー">
-          </div>
-          <div class="project-panel-body">
-            <h3>セキュリティレビューAIエージェント</h3>
-            <p class="project-summary">セキュリティレビュー依頼に対し、頻出するクライアント質問への回答を自動生成するAIエージェント。手作業での回答業務を削減し、レビュー時に正答率60%を達成しました。</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>セキュリティレビュー依頼には繰り返し手作業で回答する必要があり、頻出するクライアント質問への対応に時間がかかっていました。</dd></div>
-              <div><dt>Model</dt><dd>セキュリティレビュー回答を自動化するAIエージェント。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>LLM Agent (Gemini)</li><li>LLM-based Category Routing</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>セキュリティレビュー回答を自動化し、正答率60%を達成。</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="detail-card project-panel" id="transcribe-bot" role="tabpanel" hidden>
-          <div class="project-panel-body">
-            <h3>文字起こしBot</h3>
-            <p class="project-summary">音声データを文字起こしと要約に変換するBot。TelegramやDropbox経由で送られた音声をGeminiで文字起こし・要約し、結果を自動でユーザーに返信します。</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>TBD</dd></div>
-              <div><dt>Model</dt><dd>音声の文字起こし・要約Bot。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Speech-to-Text</li><li>LLM Summarization (Gemini)</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="detail-card project-panel" id="household-budget-management" role="tabpanel" hidden>
-          <div class="project-panel-body">
-            <h3>家計管理</h3>
-            <p class="project-summary">銀行・カードの明細を取り込んで照合し、ルールベースのマッチングとLLMによる分類で支出をカテゴリ分けする仕組み。支出レポート用のTelegram Botを計画中です。</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>TBD</dd></div>
-              <div><dt>Model</dt><dd>明細の取り込み・照合・分類ワークフロー。</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Rule-based Matching (Regex)</li><li>LLM Categorization (OpenAI)</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
+        <details class="category-group" id="category-ai-automation">
+          <summary>AI・自動化</summary>
+          <details class="project-item" id="security-review-ai-agent">
+            <summary>セキュリティレビューAIエージェント</summary>
+            <div class="project-item-body">
+              <p class="project-summary">セキュリティレビュー依頼に対し、頻出するクライアント質問への回答を自動生成するAIエージェント。手作業での回答業務を削減し、レビュー時に正答率60%を達成しました。</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>セキュリティレビュー依頼には繰り返し手作業で回答する必要があり、頻出するクライアント質問への対応に時間がかかっていました。</dd></div>
+                <div><dt>Model</dt><dd>セキュリティレビュー回答を自動化するAIエージェント。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>LLM Agent (Gemini)</li><li>LLM-based Category Routing</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>セキュリティレビュー回答を自動化し、正答率60%を達成。</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="transcribe-bot">
+            <summary>文字起こしBot</summary>
+            <div class="project-item-body">
+              <p class="project-summary">音声データを文字起こしと要約に変換するBot。TelegramやDropbox経由で送られた音声をGeminiで文字起こし・要約し、結果を自動でユーザーに返信します。</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>TBD</dd></div>
+                <div><dt>Model</dt><dd>音声の文字起こし・要約Bot。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Speech-to-Text</li><li>LLM Summarization (Gemini)</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="household-budget-management">
+            <summary>家計管理</summary>
+            <div class="project-item-body">
+              <p class="project-summary">銀行・カードの明細を取り込んで照合し、ルールベースのマッチングとLLMによる分類で支出をカテゴリ分けする仕組み。支出レポート用のTelegram Botを計画中です。</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>TBD</dd></div>
+                <div><dt>Model</dt><dd>明細の取り込み・照合・分類ワークフロー。</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Rule-based Matching (Regex)</li><li>LLM Categorization (OpenAI)</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+        </details>
       </div>
     </section>
   </main>
@@ -318,7 +254,7 @@
     <p>© <span id="year"></span> Jumpei Kato</p>
   </footer>
 
-  <script src="/header.js?v=20261027"></script>
-  <script src="/script.js?v=20261027"></script>
+  <script src="/header.js?v=20261027b"></script>
+  <script src="/script.js?v=20261027b"></script>
 </body>
 </html>

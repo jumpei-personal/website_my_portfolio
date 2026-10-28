@@ -510,3 +510,10 @@
 - Action taken: Rewrote `docs/analytics_projects.md` by category with an Algorithms field for 15 projects, replaced the homepage carousel (EN/JP) with category tabs and nested project tabs, removed the separate projects pages, pointed the header `Analytics Project` link to `/#projects` (`/jp#projects`), removed projects pages from the Pages workflow and Docker preview, and bumped asset cache versions. Unknown content is shown as `TBD`.
 - Files changed: `docs/analytics_projects.md`, `src/index.html`, `src/index-jp.html`, `src/style.css`, `src/script.js`, `src/header.js`, `src/resume.html`, `src/resume-jp.html`, `.github/workflows/deploy-pages.yml`, `docker-compose.yml`, `docs/action_log.md`; deleted `src/projects.html`, `src/projects-jp.html`
 - Status: Completed locally; tab targets and HTML nesting checked, JS syntax checked, EN desktop and JP mobile screenshots rendered.
+
+### Switch Homepage Projects To Nested Collapsible List
+
+- Issue/task: Projects should be nested (category > project > details) rather than switched with tab buttons, and project pictures should be removed.
+- Action taken: Replaced the tab buttons and panels with nested `<details>` elements (EN/JP), removed the 4 project images, replaced tab CSS with collapsible list styles, removed the tab JavaScript, and bumped asset cache versions.
+- Files changed: `src/index.html`, `src/index-jp.html`, `src/style.css`, `src/script.js`, `src/resume.html`, `src/resume-jp.html`, `docs/action_log.md`
+- Status: Completed locally; 7 categories and 15 projects per language, JS syntax checked, collapsed (JP mobile) and expanded (EN desktop) screenshots rendered.

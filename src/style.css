@@ -329,80 +329,70 @@ h3 {
   box-shadow: var(--shadow);
 }
 
-/* Nested project tabs: category tabs on top, project tabs inside each category. */
-.tab-list {
-  display: flex;
-  gap: 0.5rem;
-  overflow-x: auto;
-  padding-bottom: 0.4rem;
-}
-
-.tab-list button {
-  flex: 0 0 auto;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--ink);
-  padding: 0.5rem 0.9rem;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: background-color 160ms ease, border-color 160ms ease;
-}
-
-.tab-list button:hover {
-  border-color: rgba(20, 92, 83, 0.34);
-}
-
-.category-tabs {
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.category-tabs button[aria-selected="true"] {
-  border-color: transparent;
-  background: var(--accent);
-  color: #f8fffd;
-}
-
-.project-tabs {
-  margin: 1.25rem 0 1rem;
-}
-
-.project-tabs button {
-  font-size: 0.76rem;
-}
-
-.project-tabs button[aria-selected="true"] {
-  border-color: rgba(20, 92, 83, 0.34);
-  background: var(--accent-soft);
-}
-
-.project-panel {
+/* Nested project list: categories expand to projects, projects expand to details. */
+.project-tree {
   display: grid;
-  gap: 1.5rem;
-  overflow: hidden;
+  gap: 0.75rem;
 }
 
-.project-panel-with-media {
-  grid-template-columns: minmax(200px, 300px) minmax(0, 1fr);
-  align-items: start;
+.category-group {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 0.25rem 1.25rem;
 }
 
-.project-panel[hidden] {
+.category-group[open] {
+  padding-bottom: 1rem;
+}
+
+.project-tree summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.project-tree summary::-webkit-details-marker {
   display: none;
 }
 
-.project-panel-media img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 16px;
+.project-tree summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.project-tree details[open] > summary::after {
+  content: "\2212";
+}
+
+.category-group > summary {
+  padding: 0.9rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.project-item {
+  border-top: 1px solid var(--line);
+  margin-left: 1rem;
+}
+
+.project-item > summary {
+  padding: 0.75rem 0;
+  font-weight: 500;
+}
+
+.project-item-body {
+  padding: 0 0 1rem;
 }
 
 .project-summary {
-  margin-top: 0.75rem;
+  margin-top: 0;
   color: var(--muted);
 }
 
@@ -536,14 +526,6 @@ h3 {
 
   .hero-split .button-row {
     justify-content: center;
-  }
-
-  .project-panel-with-media {
-    grid-template-columns: 1fr;
-  }
-
-  .project-panel-media img {
-    max-width: 320px;
   }
 }
 

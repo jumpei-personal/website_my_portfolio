@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20261027">
+  <link rel="stylesheet" href="/style.css?v=20261027b">
 </head>
 <body class="page-home" data-page="home" data-lang="en">
   <div class="grain" aria-hidden="true"></div>
@@ -38,278 +38,214 @@
         <h2>Analytics Projects</h2>
       </div>
 
-      <div class="tab-list category-tabs" role="tablist" aria-label="Project categories">
-        <button type="button" role="tab" aria-selected="true" aria-controls="category-workforce-planning">Workforce Planning</button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="category-retention-drivers">Retention &amp; Drivers</button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="category-performance">Performance</button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="category-talent-mobility">Talent Mobility</button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="category-recruiting">Recruiting</button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="category-pay-equity">Pay Equity</button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="category-ai-automation">AI &amp; Automation</button>
-      </div>
+      <div class="project-tree">
+        <details class="category-group" id="category-workforce-planning">
+          <summary>Workforce Planning</summary>
+          <details class="project-item" id="headcount-simulation-framework">
+            <summary>Headcount Simulation Framework</summary>
+            <div class="project-item-body">
+              <p class="project-summary">Headcount Simulation Framework helps HR leaders forecast future workforce size under join, resignation, and internal transition scenarios. The project uses a Markov-chain-based workforce simulation model with transition probabilities estimated from historical employee attributes. The model can use more than five attributes across 10,000+ employees to support strategic workforce planning and workforce size forecasting.</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>Previous forecasting processes were time-consuming and relied on probability assumptions that were not statistically robust, making it difficult to account for uncertainty in workforce planning.</dd></div>
+                <div><dt>Model</dt><dd>Markov-chain-based workforce transition model.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Markov Chain</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>Improves workforce planning with scalable headcount forecasts.</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="labor-cost-simulation-framework">
+            <summary>Labor Cost Simulation Framework</summary>
+            <div class="project-item-body">
+              <p class="project-summary">Labor Cost Simulation Framework helps HR and finance leaders forecast future labor costs under uncertain workforce movement scenarios. The project uses an Explainable Boosting Machine model with simulated headcount outputs, supporting labor cost forecasting and budget planning across multiple scenarios.</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>Labor cost planning can be difficult when future workforce movement, hiring, resignation, and internal transition patterns are uncertain.</dd></div>
+                <div><dt>Model</dt><dd>EBM-based labor cost simulation model using simulated headcount.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Explainable Boosting Machine (EBM)</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>Improves budget planning with scenario-based labor cost forecasts.</dd></div>
+              </dl>
+            </div>
+          </details>
+        </details>
 
-      <!-- Workforce Planning -->
-      <div class="category-panel" id="category-workforce-planning" role="tabpanel">
-        <div class="tab-list project-tabs" role="tablist" aria-label="Workforce Planning projects">
-          <button type="button" role="tab" aria-selected="true" aria-controls="headcount-simulation-framework">Headcount Simulation</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="labor-cost-simulation-framework">Labor Cost Simulation</button>
-        </div>
+        <details class="category-group" id="category-retention-drivers">
+          <summary>Retention &amp; Drivers</summary>
+          <details class="project-item" id="driver-analysis-framework">
+            <summary>Driver Analysis Framework</summary>
+            <div class="project-item-body">
+              <p class="project-summary">Driver Analysis Framework identifies interpretable drivers across different HR questions and client contexts. The model can handle many categorical variables, support configurable target variables, and apply tailored data cleansing for each analysis request.</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>HR datasets often contain many categorical variables, making standard linear or logistic regression difficult to apply across frequent ad hoc client requests with different business contexts.</dd></div>
+                <div><dt>Model</dt><dd>Configurable driver analysis model with tailored data cleansing.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Explainable Boosting Machine (EBM)</li><li>Logistic Regression</li><li>Bayesian Inference</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>Delivers interpretable drivers across different HR questions.</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="attrition-analysis">
+            <summary>Attrition Analysis</summary>
+            <div class="project-item-body">
+              <p class="project-summary">Attrition Analysis estimates which employees are likely to leave and how attrition risk changes over time. The project combines gradient-boosted classification for attrition risk with a time-varying Cox model for time-to-attrition, and generates business-facing HTML reports from a reproducible notebook pipeline.</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>HR teams need to know not only who is likely to leave, but also when attrition risk rises, in a form business stakeholders can act on.</dd></div>
+                <div><dt>Model</dt><dd>Attrition risk and time-to-attrition model with business-facing reports.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>LightGBM</li><li>Cox Time-Varying Model</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="change-to-metric-causal-inference">
+            <summary>Change-to-Metric Causal Inference</summary>
+            <div class="project-item-body">
+              <p class="project-summary">Change-to-Metric Causal Inference estimates the causal effect of an organizational change, such as a relocation, on an HR metric such as attrition. The project models each employee's likelihood of experiencing the change with a propensity score, then compares weighted outcomes between changed and unchanged employees to reduce selection bias.</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>Simple before-and-after comparisons cannot show whether an organizational change, such as a relocation, actually causes a change in an HR metric such as attrition.</dd></div>
+                <div><dt>Model</dt><dd>Propensity-score-weighted causal effect model.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Propensity Score (Logistic Regression)</li><li>Inverse Probability Weighting (IPW)</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+        </details>
 
-        <article class="detail-card project-panel project-panel-with-media" id="headcount-simulation-framework" role="tabpanel">
-          <div class="project-panel-media">
-            <img src="/assets/images/headcount_simulation.png" alt="Headcount Simulation Framework preview">
-          </div>
-          <div class="project-panel-body">
-            <h3>Headcount Simulation Framework</h3>
-            <p class="project-summary">Headcount Simulation Framework helps HR leaders forecast future workforce size under join, resignation, and internal transition scenarios. The project uses a Markov-chain-based workforce simulation model with transition probabilities estimated from historical employee attributes. The model can use more than five attributes across 10,000+ employees to support strategic workforce planning and workforce size forecasting.</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>Previous forecasting processes were time-consuming and relied on probability assumptions that were not statistically robust, making it difficult to account for uncertainty in workforce planning.</dd></div>
-              <div><dt>Model</dt><dd>Markov-chain-based workforce transition model.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Markov Chain</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>Improves workforce planning with scalable headcount forecasts.</dd></div>
-            </dl>
-          </div>
-        </article>
+        <details class="category-group" id="category-performance">
+          <summary>Performance</summary>
+          <details class="project-item" id="evaluation-analysis">
+            <summary>Evaluation Analysis</summary>
+            <div class="project-item-body">
+              <p class="project-summary">Evaluation Analysis explains which factors are associated with employee evaluation outcomes. The project prepares predictor and target data, runs exploratory analysis, and trains an elastic net regression model to surface interpretable drivers of evaluation results.</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>TBD</dd></div>
+                <div><dt>Model</dt><dd>Interpretable regression model for employee evaluation outcomes.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Elastic Net Regression</li><li>Explainable Boosting Machine (EBM)</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+        </details>
 
-        <article class="detail-card project-panel project-panel-with-media" id="labor-cost-simulation-framework" role="tabpanel" hidden>
-          <div class="project-panel-media">
-            <img src="/assets/images/laborcost_simulation.png" alt="Labor Cost Simulation Framework preview">
-          </div>
-          <div class="project-panel-body">
-            <h3>Labor Cost Simulation Framework</h3>
-            <p class="project-summary">Labor Cost Simulation Framework helps HR and finance leaders forecast future labor costs under uncertain workforce movement scenarios. The project uses an Explainable Boosting Machine model with simulated headcount outputs, supporting labor cost forecasting and budget planning across multiple scenarios.</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>Labor cost planning can be difficult when future workforce movement, hiring, resignation, and internal transition patterns are uncertain.</dd></div>
-              <div><dt>Model</dt><dd>EBM-based labor cost simulation model using simulated headcount.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Explainable Boosting Machine (EBM)</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>Improves budget planning with scenario-based labor cost forecasts.</dd></div>
-            </dl>
-          </div>
-        </article>
-      </div>
+        <details class="category-group" id="category-talent-mobility">
+          <summary>Talent Mobility</summary>
+          <details class="project-item" id="relocation-optimization-ai">
+            <summary>Relocation Optimization AI (WIP)</summary>
+            <div class="project-item-body">
+              <p class="project-summary">Relocation Optimization AI is a work-in-progress project for recommending better-fit relocation options using job-title embeddings. The model measures the distance between each employee and other roles, then estimates the path toward the employee's ideal future position. Unlike traditional job recommendation, it optimizes not only the next match but also the best path to minimize the distance to the ideal role.</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>Relocation decisions require more than matching employees to currently similar roles; they also need to account for the distance to each employee's ideal future position.</dd></div>
+                <div><dt>Model</dt><dd>Job-title embedding model for role-distance and ideal-path optimization.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Sentence Embeddings (SBERT / BGE)</li><li>UMAP</li><li>HDBSCAN</li><li>K-Means</li><li>Agglomerative Clustering</li><li>Cosine Similarity</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>Recommends moves that minimize the path to ideal roles.</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="skill-knowledge-graph">
+            <summary>Skill Knowledge Graph</summary>
+            <div class="project-item-body">
+              <p class="project-summary">Skill Knowledge Graph recommends potential next internal roles based on the skills each job requires. The project generates skills for each job title with an LLM, scores skill-to-skill relationships by combining embedding similarity with LLM judgment, and aggregates them into job-to-job similarity to support career-mobility conversations.</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>Employees often have relevant skills and experience but no clear internal career path, and counselors need concrete next-role recommendations for career-mobility sessions.</dd></div>
+                <div><dt>Model</dt><dd>Skill-based job similarity model for internal mobility recommendations.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>LLM Skill Generation</li><li>Embeddings + Cosine Similarity</li><li>LLM-as-Judge Scoring</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+        </details>
 
-      <!-- Retention & Drivers -->
-      <div class="category-panel" id="category-retention-drivers" role="tabpanel" hidden>
-        <div class="tab-list project-tabs" role="tablist" aria-label="Retention and Drivers projects">
-          <button type="button" role="tab" aria-selected="true" aria-controls="driver-analysis-framework">Driver Analysis</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="attrition-analysis">Attrition Analysis</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="change-to-metric-causal-inference">Causal Inference</button>
-        </div>
+        <details class="category-group" id="category-recruiting">
+          <summary>Recruiting</summary>
+          <details class="project-item" id="time-to-recruit-regression">
+            <summary>Time-to-Recruit Regression</summary>
+            <div class="project-item-body">
+              <p class="project-summary">TBD</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>TBD</dd></div>
+                <div><dt>Model</dt><dd>Regression model for time-to-recruit drivers.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Linear Regression</li><li>Explainable Boosting Machine (EBM)</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="skills-inference-from-job-descriptions">
+            <summary>Skills Inference from Job Descriptions</summary>
+            <div class="project-item-body">
+              <p class="project-summary">Skills Inference from Job Descriptions classifies jobs and maps their key skills from job description text. The project compares TF-IDF, Word2Vec, and Doc2Vec text representations, then applies K-Means clustering and LDA topic modeling to group similar jobs and surface the vocabulary that defines each group. Completed as the final project for Northwestern University MSDS 453 Natural Language Processing (Winter 2021).</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>Job descriptions contain skill information in unstructured text, making it difficult to classify jobs and map the skills they require.</dd></div>
+                <div><dt>Model</dt><dd>Text clustering and topic model for job classification and skill mapping.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>TF-IDF</li><li>Word2Vec (Google News pretrained)</li><li>Doc2Vec</li><li>K-Means</li><li>LDA Topic Modeling</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="candidate-job-matching">
+            <summary>Candidate–Job Matching</summary>
+            <div class="project-item-body">
+              <p class="project-summary">TBD</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>TBD</dd></div>
+                <div><dt>Model</dt><dd>Embedding-based learning-to-rank model for candidate–job matching.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Vector Embeddings</li><li>LambdaMART</li><li>CatBoost Ranking</li><li>XGBoost Ranking</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+        </details>
 
-        <article class="detail-card project-panel project-panel-with-media" id="driver-analysis-framework" role="tabpanel">
-          <div class="project-panel-media">
-            <img src="/assets/images/driver_analysis.png" alt="Driver Analysis Framework preview">
-          </div>
-          <div class="project-panel-body">
-            <h3>Driver Analysis Framework</h3>
-            <p class="project-summary">Driver Analysis Framework identifies interpretable drivers across different HR questions and client contexts. The model can handle many categorical variables, support configurable target variables, and apply tailored data cleansing for each analysis request.</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>HR datasets often contain many categorical variables, making standard linear or logistic regression difficult to apply across frequent ad hoc client requests with different business contexts.</dd></div>
-              <div><dt>Model</dt><dd>Configurable driver analysis model with tailored data cleansing.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Explainable Boosting Machine (EBM)</li><li>Logistic Regression</li><li>Bayesian Inference</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>Delivers interpretable drivers across different HR questions.</dd></div>
-            </dl>
-          </div>
-        </article>
+        <details class="category-group" id="category-pay-equity">
+          <summary>Pay Equity</summary>
+          <details class="project-item" id="gender-pay-gap-analysis">
+            <summary>Gender Pay Gap Analysis</summary>
+            <div class="project-item-body">
+              <p class="project-summary">TBD</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>TBD</dd></div>
+                <div><dt>Model</dt><dd>Regression model for the adjusted gender pay gap.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Linear Regression</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+        </details>
 
-        <article class="detail-card project-panel" id="attrition-analysis" role="tabpanel" hidden>
-          <div class="project-panel-body">
-            <h3>Attrition Analysis</h3>
-            <p class="project-summary">Attrition Analysis estimates which employees are likely to leave and how attrition risk changes over time. The project combines gradient-boosted classification for attrition risk with a time-varying Cox model for time-to-attrition, and generates business-facing HTML reports from a reproducible notebook pipeline.</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>HR teams need to know not only who is likely to leave, but also when attrition risk rises, in a form business stakeholders can act on.</dd></div>
-              <div><dt>Model</dt><dd>Attrition risk and time-to-attrition model with business-facing reports.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>LightGBM</li><li>Cox Time-Varying Model</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="detail-card project-panel" id="change-to-metric-causal-inference" role="tabpanel" hidden>
-          <div class="project-panel-body">
-            <h3>Change-to-Metric Causal Inference</h3>
-            <p class="project-summary">Change-to-Metric Causal Inference estimates the causal effect of an organizational change, such as a relocation, on an HR metric such as attrition. The project models each employee's likelihood of experiencing the change with a propensity score, then compares weighted outcomes between changed and unchanged employees to reduce selection bias.</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>Simple before-and-after comparisons cannot show whether an organizational change, such as a relocation, actually causes a change in an HR metric such as attrition.</dd></div>
-              <div><dt>Model</dt><dd>Propensity-score-weighted causal effect model.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Propensity Score (Logistic Regression)</li><li>Inverse Probability Weighting (IPW)</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-      </div>
-
-      <!-- Performance -->
-      <div class="category-panel" id="category-performance" role="tabpanel" hidden>
-        <div class="tab-list project-tabs" role="tablist" aria-label="Performance projects">
-          <button type="button" role="tab" aria-selected="true" aria-controls="evaluation-analysis">Evaluation Analysis</button>
-        </div>
-
-        <article class="detail-card project-panel" id="evaluation-analysis" role="tabpanel">
-          <div class="project-panel-body">
-            <h3>Evaluation Analysis</h3>
-            <p class="project-summary">Evaluation Analysis explains which factors are associated with employee evaluation outcomes. The project prepares predictor and target data, runs exploratory analysis, and trains an elastic net regression model to surface interpretable drivers of evaluation results.</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>TBD</dd></div>
-              <div><dt>Model</dt><dd>Interpretable regression model for employee evaluation outcomes.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Elastic Net Regression</li><li>Explainable Boosting Machine (EBM)</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-      </div>
-
-      <!-- Talent Mobility -->
-      <div class="category-panel" id="category-talent-mobility" role="tabpanel" hidden>
-        <div class="tab-list project-tabs" role="tablist" aria-label="Talent Mobility projects">
-          <button type="button" role="tab" aria-selected="true" aria-controls="relocation-optimization-ai">Relocation Optimization (WIP)</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="skill-knowledge-graph">Skill Knowledge Graph</button>
-        </div>
-
-        <article class="detail-card project-panel" id="relocation-optimization-ai" role="tabpanel">
-          <div class="project-panel-body">
-            <h3>Relocation Optimization AI (WIP)</h3>
-            <p class="project-summary">Relocation Optimization AI is a work-in-progress project for recommending better-fit relocation options using job-title embeddings. The model measures the distance between each employee and other roles, then estimates the path toward the employee's ideal future position. Unlike traditional job recommendation, it optimizes not only the next match but also the best path to minimize the distance to the ideal role.</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>Relocation decisions require more than matching employees to currently similar roles; they also need to account for the distance to each employee's ideal future position.</dd></div>
-              <div><dt>Model</dt><dd>Job-title embedding model for role-distance and ideal-path optimization.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Sentence Embeddings (SBERT / BGE)</li><li>UMAP</li><li>HDBSCAN</li><li>K-Means</li><li>Agglomerative Clustering</li><li>Cosine Similarity</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>Recommends moves that minimize the path to ideal roles.</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="detail-card project-panel" id="skill-knowledge-graph" role="tabpanel" hidden>
-          <div class="project-panel-body">
-            <h3>Skill Knowledge Graph</h3>
-            <p class="project-summary">Skill Knowledge Graph recommends potential next internal roles based on the skills each job requires. The project generates skills for each job title with an LLM, scores skill-to-skill relationships by combining embedding similarity with LLM judgment, and aggregates them into job-to-job similarity to support career-mobility conversations.</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>Employees often have relevant skills and experience but no clear internal career path, and counselors need concrete next-role recommendations for career-mobility sessions.</dd></div>
-              <div><dt>Model</dt><dd>Skill-based job similarity model for internal mobility recommendations.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>LLM Skill Generation</li><li>Embeddings + Cosine Similarity</li><li>LLM-as-Judge Scoring</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-      </div>
-
-      <!-- Recruiting -->
-      <div class="category-panel" id="category-recruiting" role="tabpanel" hidden>
-        <div class="tab-list project-tabs" role="tablist" aria-label="Recruiting projects">
-          <button type="button" role="tab" aria-selected="true" aria-controls="time-to-recruit-regression">Time-to-Recruit</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="skills-inference-from-job-descriptions">Skills Inference</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="candidate-job-matching">Candidate–Job Matching</button>
-        </div>
-
-        <article class="detail-card project-panel" id="time-to-recruit-regression" role="tabpanel">
-          <div class="project-panel-body">
-            <h3>Time-to-Recruit Regression</h3>
-            <p class="project-summary">TBD</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>TBD</dd></div>
-              <div><dt>Model</dt><dd>Regression model for time-to-recruit drivers.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Linear Regression</li><li>Explainable Boosting Machine (EBM)</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="detail-card project-panel" id="skills-inference-from-job-descriptions" role="tabpanel" hidden>
-          <div class="project-panel-body">
-            <h3>Skills Inference from Job Descriptions</h3>
-            <p class="project-summary">Skills Inference from Job Descriptions classifies jobs and maps their key skills from job description text. The project compares TF-IDF, Word2Vec, and Doc2Vec text representations, then applies K-Means clustering and LDA topic modeling to group similar jobs and surface the vocabulary that defines each group. Completed as the final project for Northwestern University MSDS 453 Natural Language Processing (Winter 2021).</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>Job descriptions contain skill information in unstructured text, making it difficult to classify jobs and map the skills they require.</dd></div>
-              <div><dt>Model</dt><dd>Text clustering and topic model for job classification and skill mapping.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>TF-IDF</li><li>Word2Vec (Google News pretrained)</li><li>Doc2Vec</li><li>K-Means</li><li>LDA Topic Modeling</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="detail-card project-panel" id="candidate-job-matching" role="tabpanel" hidden>
-          <div class="project-panel-body">
-            <h3>Candidate–Job Matching</h3>
-            <p class="project-summary">TBD</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>TBD</dd></div>
-              <div><dt>Model</dt><dd>Embedding-based learning-to-rank model for candidate–job matching.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Vector Embeddings</li><li>LambdaMART</li><li>CatBoost Ranking</li><li>XGBoost Ranking</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-      </div>
-
-      <!-- Pay Equity -->
-      <div class="category-panel" id="category-pay-equity" role="tabpanel" hidden>
-        <div class="tab-list project-tabs" role="tablist" aria-label="Pay Equity projects">
-          <button type="button" role="tab" aria-selected="true" aria-controls="gender-pay-gap-analysis">Gender Pay Gap</button>
-        </div>
-
-        <article class="detail-card project-panel" id="gender-pay-gap-analysis" role="tabpanel">
-          <div class="project-panel-body">
-            <h3>Gender Pay Gap Analysis</h3>
-            <p class="project-summary">TBD</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>TBD</dd></div>
-              <div><dt>Model</dt><dd>Regression model for the adjusted gender pay gap.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Linear Regression</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-      </div>
-
-      <!-- AI & Automation -->
-      <div class="category-panel" id="category-ai-automation" role="tabpanel" hidden>
-        <div class="tab-list project-tabs" role="tablist" aria-label="AI and Automation projects">
-          <button type="button" role="tab" aria-selected="true" aria-controls="security-review-ai-agent">Security Review AI</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="transcribe-bot">Transcribe Bot</button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="household-budget-management">Household Budget</button>
-        </div>
-
-        <article class="detail-card project-panel project-panel-with-media" id="security-review-ai-agent" role="tabpanel">
-          <div class="project-panel-media">
-            <img src="/assets/images/security_app.png" alt="Security Review AI Agent preview">
-          </div>
-          <div class="project-panel-body">
-            <h3>Security Review AI Agent</h3>
-            <p class="project-summary">Security Review AI Agent automatically responds to security review requests by generating answers to recurring client questions. The project reduced manual response work and achieved a 60% correct answer ratio during review.</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>Security review requests required repeated manual responses, creating a time-consuming workflow for recurring client questions.</dd></div>
-              <div><dt>Model</dt><dd>AI agent for automated security review responses.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>LLM Agent (Gemini)</li><li>LLM-based Category Routing</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>Automates security review responses with a 60% correct answer ratio.</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="detail-card project-panel" id="transcribe-bot" role="tabpanel" hidden>
-          <div class="project-panel-body">
-            <h3>Transcribe Bot</h3>
-            <p class="project-summary">Transcribe Bot turns audio recordings into transcripts and summaries. Audio sent through Telegram or Dropbox is transcribed and summarized with Gemini, and the result is sent back to the user automatically.</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>TBD</dd></div>
-              <div><dt>Model</dt><dd>Audio transcription and summarization bot.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Speech-to-Text</li><li>LLM Summarization (Gemini)</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="detail-card project-panel" id="household-budget-management" role="tabpanel" hidden>
-          <div class="project-panel-body">
-            <h3>Household Budget Management</h3>
-            <p class="project-summary">Household Budget Management imports and reconciles bank and card statements, then categorizes spending with rule-based matching and LLM categorization. A Telegram bot for spending reports is planned.</p>
-            <dl class="project-facts">
-              <div><dt>Problem</dt><dd>TBD</dd></div>
-              <div><dt>Model</dt><dd>Statement import, reconciliation, and categorization workflow.</dd></div>
-              <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Rule-based Matching (Regex)</li><li>LLM Categorization (OpenAI)</li></ul></dd></div>
-              <div><dt>Impact</dt><dd>TBD</dd></div>
-            </dl>
-          </div>
-        </article>
+        <details class="category-group" id="category-ai-automation">
+          <summary>AI &amp; Automation</summary>
+          <details class="project-item" id="security-review-ai-agent">
+            <summary>Security Review AI Agent</summary>
+            <div class="project-item-body">
+              <p class="project-summary">Security Review AI Agent automatically responds to security review requests by generating answers to recurring client questions. The project reduced manual response work and achieved a 60% correct answer ratio during review.</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>Security review requests required repeated manual responses, creating a time-consuming workflow for recurring client questions.</dd></div>
+                <div><dt>Model</dt><dd>AI agent for automated security review responses.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>LLM Agent (Gemini)</li><li>LLM-based Category Routing</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>Automates security review responses with a 60% correct answer ratio.</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="transcribe-bot">
+            <summary>Transcribe Bot</summary>
+            <div class="project-item-body">
+              <p class="project-summary">Transcribe Bot turns audio recordings into transcripts and summaries. Audio sent through Telegram or Dropbox is transcribed and summarized with Gemini, and the result is sent back to the user automatically.</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>TBD</dd></div>
+                <div><dt>Model</dt><dd>Audio transcription and summarization bot.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Speech-to-Text</li><li>LLM Summarization (Gemini)</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+          <details class="project-item" id="household-budget-management">
+            <summary>Household Budget Management</summary>
+            <div class="project-item-body">
+              <p class="project-summary">Household Budget Management imports and reconciles bank and card statements, then categorizes spending with rule-based matching and LLM categorization. A Telegram bot for spending reports is planned.</p>
+              <dl class="project-facts">
+                <div><dt>Problem</dt><dd>TBD</dd></div>
+                <div><dt>Model</dt><dd>Statement import, reconciliation, and categorization workflow.</dd></div>
+                <div><dt>Algorithms</dt><dd><ul class="algorithm-tags"><li>Rule-based Matching (Regex)</li><li>LLM Categorization (OpenAI)</li></ul></dd></div>
+                <div><dt>Impact</dt><dd>TBD</dd></div>
+              </dl>
+            </div>
+          </details>
+        </details>
       </div>
     </section>
   </main>
@@ -318,7 +254,7 @@
     <p>© <span id="year"></span> Jumpei Kato</p>
   </footer>
 
-  <script src="/header.js?v=20261027"></script>
-  <script src="/script.js?v=20261027"></script>
+  <script src="/header.js?v=20261027b"></script>
+  <script src="/script.js?v=20261027b"></script>
 </body>
 </html>
