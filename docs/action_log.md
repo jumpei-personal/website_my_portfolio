@@ -517,3 +517,10 @@
 - Action taken: Replaced the tab buttons and panels with nested `<details>` elements (EN/JP), removed the 4 project images, replaced tab CSS with collapsible list styles, removed the tab JavaScript, and bumped asset cache versions.
 - Files changed: `src/index.html`, `src/index-jp.html`, `src/style.css`, `src/script.js`, `src/resume.html`, `src/resume-jp.html`, `docs/action_log.md`
 - Status: Completed locally; 7 categories and 15 projects per language, JS syntax checked, collapsed (JP mobile) and expanded (EN desktop) screenshots rendered.
+
+### Add Tech Stack Section
+
+- Issue/task: Add a tech stack section to the homepage.
+- Action taken: Added a `Tech Stack` section after Analytics Projects (EN/JP) with 11 groups of tool tags, sourced from repo dependencies/imports, the resume, and user-provided tools. Added tech stack styles and bumped asset cache versions.
+- Files changed: `src/index.html`, `src/index-jp.html`, `src/style.css`, `src/resume.html`, `src/resume-jp.html`, `docs/action_log.md`
+- Status: Completed; HTML nesting checked, EN desktop and JP mobile screenshots rendered.

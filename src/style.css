@@ -308,6 +308,7 @@ h3 {
 }
 
 .projects-section,
+.tech-stack-section,
 .stacked-cards,
 .resume-layout {
   margin-top: 4rem;
@@ -414,7 +415,8 @@ h3 {
   margin: 0.2rem 0 0;
 }
 
-.algorithm-tags {
+.algorithm-tags,
+.tool-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
@@ -423,7 +425,8 @@ h3 {
   list-style: none;
 }
 
-.algorithm-tags li {
+.algorithm-tags li,
+.tool-tags li {
   border: 1px solid var(--line);
   border-radius: 999px;
   background: #fff;
@@ -477,6 +480,36 @@ h3 {
   text-align: center;
 }
 
+/* Tech stack: one row per group, tools as tags. */
+.tech-stack-list {
+  display: grid;
+  margin: 0;
+}
+
+.tech-stack-list > div {
+  display: grid;
+  grid-template-columns: minmax(160px, 220px) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.8rem 0;
+}
+
+.tech-stack-list > div + div {
+  border-top: 1px solid var(--line);
+}
+
+.tech-stack-list dt {
+  font-weight: 700;
+}
+
+.tech-stack-list dd {
+  margin: 0;
+}
+
+.tech-stack-list .tool-tags {
+  margin: 0;
+}
+
 @media (max-width: 800px) {
   .site-header-inner {
     grid-template-columns: 1fr auto auto;
@@ -526,6 +559,11 @@ h3 {
 
   .hero-split .button-row {
     justify-content: center;
+  }
+
+  .tech-stack-list > div {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
   }
 }
 
